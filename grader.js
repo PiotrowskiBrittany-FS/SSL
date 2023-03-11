@@ -38,7 +38,7 @@ readline.question('What is your name? ', name =>{
             else {
                 console.log(`${name} got an F in ${assignment}`)
             }
+            readline.close();
         })
     })
-    readline.close();
 })
