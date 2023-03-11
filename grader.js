@@ -26,13 +26,13 @@ readline.question('What is your name? ', name =>{
             if(grade >= 90){
                 console.log(`${name} got an A in ${assignment}`)
             }
-            else if (grade >= 80 && intgrade <= 90){
+            else if (grade >= 80 && grade <= 90){
                 console.log(`${name} got a B in ${assignment}`)
             }
-            else if (grade >= 70 && intgrade <= 80){
+            else if (grade >= 70 && grade <= 80){
                 console.log(`${name} got a C in ${assignment}`)
             }
-            else if (grade >= 60 && intgrade <= 70){
+            else if (grade >= 60 && grade <= 70){
                 console.log(`${name} got a D in ${assignment}`)
             }
             else {
@@ -40,4 +40,5 @@ readline.question('What is your name? ', name =>{
             }
         })
     })
+    readline.close();
 })
