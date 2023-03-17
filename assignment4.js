@@ -4,6 +4,8 @@ var http = require('http');
 var myname = function(){
   // functon was changed to function - typo without the i
   console.log("Here is my IP address");
+  return "149.24.160.1";
+  //added return
 }
 
 async function callHttpbin() {
@@ -31,7 +33,7 @@ async function callHttpbin() {
 async function executeAsyncTask(){ //changed to an async function
   const valueA = await callHttpbin(); //made async call
   const valueB = await myname(); // awaits name
-  console.log(valueB(), " ", valueA);
+  console.log(valueB+" , "+valueA);
   //changed from valueB+" "+valueA
 }
 
