@@ -1,6 +1,8 @@
 var http = require('http');
+// changed from htt to http
 
 var myname = function(){
+  // functon was changed to function - typo without the i
   console.log("Here is my IP address");
 }
 
@@ -16,20 +18,21 @@ async function callHttpbin() {
      });
      response.on('end', function() {
       var result = JSON.parse(str);
-      myips = result.origin;
-      resolve(myips);
+      var myips = result.origin; //declared variable
+      resolve(myips); //changed to hold myips to resolve the promise
      });
      }
     );
   });
   return promise;
+  // changed from awaiting promise to returning a promise from callHttpbin
 }
 
-async function executeAsyncTask(){
-  const valueA = await callHttpbin();
-  const valueB = myname();
-  console.log(valueB+" "+valueA);
+async function executeAsyncTask(){ //changed to an async function
+  const valueA = await callHttpbin(); //made async call
+  const valueB = await myname(); // awaits name
+  console.log(valueB(), " ", valueA);
+  //changed from valueB+" "+valueA
 }
 
 executeAsyncTask();
-
